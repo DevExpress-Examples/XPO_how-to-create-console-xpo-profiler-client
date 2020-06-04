@@ -1,23 +1,25 @@
-## How to use
+# How to create a console XPO Profiler to detect performance bottlenecks and code issues
 
-NetTcpBinding:
+This example demonstrates how to implement a console version of the [XPO Profiler](https://docs.devexpress.com/XpoProfiler/10646/xpo-profiler) tool.
 
-```XpoProfilerConsole.exe -protocol nettcp -host <hostname> -port <portumber>```
+Below are usage examples for various service bindings. For more information, see [Specify Connection Parameters](https://docs.devexpress.com/XpoProfiler/10659/set-up-the-profiler#specify-connection-parameters).
 
-WsHttpBinding:
+## NetTcpBinding
 
-```XpoProfilerConsole.exe -protocol wshttp -host <hostname> -port <portumber> -servicename <serviceName>```
+`XpoProfilerConsole.exe -protocol nettcp -host <hostname> -port <portumber>`
 
-BasicHttpBinding:
+## WsHttpBinding
 
-```XpoProfilerConsole.exe -protocol basichttp -host <hostname> -port <portumber> -servicename <serviceName>```
+`XpoProfilerConsole.exe -protocol wshttp -host <hostname> -port <portumber> -servicename <serviceName>`
 
-WebAPI:
+## BasicHttpBinding
 
-```XpoProfilerConsole.exe -protocol webapi -host <hostname> -port <portumber> -path <path-to-api-controller>```
+`XpoProfilerConsole.exe -protocol basichttp -host <hostname> -port <portumber> -servicename <serviceName>`
 
-Named Pipes:
+## Web API
 
-```XpoProfilerConsole.exe -protocol namedpipes -host <hostName> -pipename <pipeName>```
+`XpoProfilerConsole.exe -protocol webapi -host <hostname> -port <portumber> -path <path-to-api-controller>`
 
-For additional information, refer to our online documentation: [Specify Connection Parameters](https://docs.devexpress.com/XpoProfiler/10659/set-up-the-profiler#specify-connection-parameters)
+## Named Pipes
+
+`XpoProfilerConsole.exe -protocol namedpipes -host <hostName> -pipename <pipeName>`
