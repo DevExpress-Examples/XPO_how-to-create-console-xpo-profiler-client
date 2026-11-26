@@ -29,7 +29,8 @@ Namespace XpoProfilerConsole
 		End Sub
 		Private Function GetServiceUrl() As String
 			Dim protocol As String = ""
-			If Not host.HostAddress.StartsWithInvariantCultureIgnoreCase("http://") AndAlso Not host.HostAddress.StartsWithInvariantCultureIgnoreCase("https://") Then
+			If Not host.HostAddress.StartsWith("http://", StringComparison.InvariantCultureIgnoreCase) _
+		AndAlso Not host.HostAddress.StartsWith("https://", StringComparison.InvariantCultureIgnoreCase) Then
 				protocol = "http://"
 			End If
 			Return String.Format(CultureInfo.InvariantCulture, "{0}{1}:{2}/{3}/", protocol, host.HostAddress, host.Port, host.ServiceName)

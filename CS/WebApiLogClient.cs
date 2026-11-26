@@ -25,12 +25,14 @@ namespace XpoProfilerConsole {
             this.Password = password;
             this.AuthToken = token;
         }
-        string GetServiceUrl() {
+        string GetServiceUrl()
+        {
             string protocol = "";
-            if(!host.HostAddress.StartsWithInvariantCultureIgnoreCase("http://")
-                && !host.HostAddress.StartsWithInvariantCultureIgnoreCase("https://")) {
+            if (!host.HostAddress.StartsWith("http://", StringComparison.InvariantCultureIgnoreCase)
+                && !host.HostAddress.StartsWith("https://", StringComparison.InvariantCultureIgnoreCase))
+            {
                 protocol = "http://";
-            };
+            }
             return string.Format(CultureInfo.InvariantCulture, "{0}{1}:{2}/{3}/", protocol, host.HostAddress, host.Port, host.ServiceName);
         }
         string GetHttpResponse(string url) {
